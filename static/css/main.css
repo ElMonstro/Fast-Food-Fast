@@ -1,0 +1,114 @@
+body{
+    font: 15px/1.5 Arial, helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: #ffffff; 
+}
+
+/* global */
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+.button_1{
+    height: 32px;
+    background: rgb(7, 175, 58);
+    border: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    align-self: auto;
+}
+
+/* Header */
+header{
+    background: #ffffff;
+    color: rgb(7, 175, 58);
+    padding-top: 40px;
+    min-height: 70px;
+   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+header a{
+    color:rgb(7, 175, 58);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 5px;
+}
+
+header li{
+    float: right;
+    display: inline;
+    padding: 0 15px 0 15px;
+}
+
+header #title{
+    float: left;
+    padding-bottom: 0;
+}
+
+header #title h1{
+    margin: 0;
+}
+
+header nav{
+    float: right;
+    margin-top: 13px
+}
+
+header .highlight, header .current a{
+    color: #ffffff;
+    background-color: rgb(7, 175, 58);
+    
+}
+
+header a:hover{
+    color: #ffffff;
+    background-color: rgb(7, 175, 58);
+    font-weight: bolder;
+}
+
+/* boxes */
+#boxes{
+    margin-top: 20px;
+    float: left;
+}
+
+#boxes .box{
+    float: left;
+    width: 20%;
+    padding: 10px;
+    margin: 5px;    
+    text-align: start;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#boxes .box img{
+    width: 70%;
+}
+
+.button_1:hover{
+    border: 5px;
+    border-color: rgb(7, 175, 58);
+}
+
+#boxes .box button{
+    float: right; 
+}
+
+footer{
+    padding:  20px;
+    margin-top: 40px;
+    color:#ffffff;
+    background: rgb(7, 175, 58);  
+    text-align: center;   
+}
