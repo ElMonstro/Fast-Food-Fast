@@ -20,7 +20,7 @@ ul{
 .button_1{
     height: 32px;
     background: rgb(7, 175, 58);
-    border: 0;
+    border: 2px;
     padding-left: 20px;
     padding-right: 20px;
     color: #ffffff;
@@ -33,7 +33,8 @@ header{
     color: rgb(7, 175, 58);
     padding-top: 40px;
     min-height: 70px;
-    border-bottom: #c5c0c0 3px solid;
+   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 header a{
@@ -79,14 +80,27 @@ header a:hover{
 /* boxes */
 #boxes{
     margin-top: 20px;
+    float: left;
 }
 
 #boxes .box{
     float: left;
-    width: 30%;
+    width: 20%;
     padding: 10px;
+    margin: 5px;
+    height: 180px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #boxes .box img{
     width: 150px;
+}
+
+.button_1:hover{
+    border: 5px;
+    border-color: rgb(7, 175, 58);
+}
+
+#boxes .box button{
+    float: right; 
 }
