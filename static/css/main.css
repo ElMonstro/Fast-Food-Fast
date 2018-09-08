@@ -87,13 +87,13 @@ header a:hover{
     float: left;
     width: 20%;
     padding: 10px;
-    margin: 5px;
-    height: 180px;
+    margin: 5px;    
+    text-align: start;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #boxes .box img{
-    width: 150px;
+    width: 70%;
 }
 
 .button_1:hover{
@@ -103,4 +103,12 @@ header a:hover{
 
 #boxes .box button{
     float: right; 
+}
+
+footer{
+    padding:  20px;
+    margin-top: 40px;
+    color:#ffffff;
+    background: rgb(7, 175, 58);  
+    text-align: center;   
 }
