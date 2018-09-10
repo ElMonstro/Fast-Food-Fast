@@ -112,6 +112,53 @@ header a:hover{
     font-weight: bold;
 }
 
+/*register.html*/
+#content{
+    margin-top: 150px;
+    
+}
+
+* {box-sizing: border-box}
+
+input[type=email], input[type=password]{
+    width: 30%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border-color: rgb(7, 175, 58);
+
+}
+
+form{
+    text-align: center;
+
+}
+
+#content .container{
+    padding-left: 0px;
+    color: rgb(7, 175, 58);
+    text-align: center;
+
+}
+
+
+
+.register_btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    opacity: 0.9;
+}
+  
+.registerbtn:hover {
+    opacity:1;
+}
+
+
 footer{
     padding:  20px;
     margin-top: 40px;
