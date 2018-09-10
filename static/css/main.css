@@ -140,6 +140,10 @@ form{
 
 }
 
+.container a{
+    text-decoration: none;
+}
+
 #content .container{
     padding-left: 0px;
     color: rgb(7, 175, 58);
