@@ -125,7 +125,13 @@ input[type=email], input[type=password]{
     padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
+    border-top: none;
+    border-left: none;
     border-color: rgb(7, 175, 58);
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    background: rgb(223, 250, 231);
 
 }
 
