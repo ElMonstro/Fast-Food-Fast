@@ -25,7 +25,12 @@ ul{
     padding-right: 20px;
     color: #ffffff;
     align-self: auto;
+    opacity: 0.9;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button_1:hover{
+    opacity: 1;
 }
     
 /* Header */
@@ -97,13 +102,14 @@ header a:hover{
     width: 70%;
 }
 
-.button_1:hover{
-    border: 5px;
-    border-color: rgb(7, 175, 58);
-}
+
 
 #boxes .box button{
     float: right; 
+}
+
+.name{
+    font-weight: bold;
 }
 
 footer{
