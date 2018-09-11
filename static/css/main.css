@@ -186,8 +186,7 @@ form{
     margin: 80px auto;
     background: #FFFFFF;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 6px;
-   
+    border-radius: 6px;   
     display: flex;
     flex-direction: column;
 }
@@ -195,7 +194,8 @@ form{
 .item{
     padding: 0;
     height: 80px;
-    display: flex;    
+    display: flex;
+        
 }
 
 .item:nth-child(3){
@@ -219,21 +219,35 @@ form{
 
 .cart-image{
     width: 20%;
+    margin-right: 50px;
 }
 
 .cart-image img{
-    width: 30%;
+    width: 50%;
     margin-top: 9px;
 }
 
 .buttons{
     margin-right: 10px;
+
 }
 
 aside{
-    width: 30%;
+    width: 35%;
     float: right;
 }
+
+.quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+
+
 
 
 
