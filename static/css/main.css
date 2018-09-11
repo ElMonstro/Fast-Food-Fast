@@ -83,12 +83,17 @@ header a:hover{
     font-weight: bolder;
 }
 
-/* section */
+/* section#items */
+#items .container{
+    width: 90%; 
+}
+
 
 /* boxes */
 #boxes{
     margin-top: 20px;
     float: left;
+    width: 65%;
 }
 
 #boxes .box{
@@ -188,8 +193,8 @@ form{
 }
 
 .item{
-    padding: 20px;
-    height: 120px;
+    padding: 0;
+    height: 80px;
     display: flex;    
 }
 
@@ -226,8 +231,11 @@ form{
 }
 
 aside{
-        
+    width: 30%;
+    float: right;
 }
+
+
 
 footer{
     padding:  20px;
