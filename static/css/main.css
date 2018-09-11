@@ -132,6 +132,8 @@ input[type=email], input[type=password]{
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     background: rgb(223, 250, 231);
+    border-radius: 6px;
+    
 
 }
 
@@ -154,7 +156,7 @@ form{
 
 
 .register_btn {
-    background-color: #4CAF50;
+    background-color: rgb(33, 165, 37);
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
@@ -162,11 +164,13 @@ form{
     cursor: pointer;
     width: 30%;
     opacity: 0.9;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
   
 .registerbtn:hover {
     opacity:1;
 }
+
 
 /* food_tray */
 .food-tray{
@@ -181,6 +185,34 @@ form{
     flex-direction: column;
 }
 
+.item{
+    padding: 20px;
+    height: 120px;
+    display: flex;    
+}
+
+.item:nth-child(3){
+    border-top: 1px solid rgb(7, 175, 58);
+    border-bottom: 1px solid rgb(7, 175, 58);
+    
+}
+.buttons {
+    position: relative;
+    padding-top: 30px;
+    margin-right: 60px;
+}
+
+.delete-btn{
+    display: inline-block;
+    cursor: pointer;
+    width: 18px;
+    height: 17px;
+    background: no-repeat center;
+}
+
+aside{
+    float: right;
+}
 
 footer{
     padding:  20px;
@@ -189,3 +221,5 @@ footer{
     background: rgb(7, 175, 58);  
     text-align: center;   
 }
+
+
