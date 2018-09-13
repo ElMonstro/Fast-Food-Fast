@@ -4,7 +4,7 @@ const foodTray = document.querySelector('.food-tray');
 const addButtons = document.querySelectorAll('.button_1');
 var tray = {};
 
-tray.prototype.isEmpty = function() {
+Object.prototype.isEmpty = function() {
     for(var key in this) {
         if(this.hasOwnProperty(key))
             return false;
@@ -23,7 +23,7 @@ function addButtonClickListener(){
         addButton.addEventListener('click', () =>{
             const boxItem = addButton.parentElement.parentElement;
             addItemToFoodTray(boxItem);
-            displayItemsInTray(tray);                         
+            displayItemsInTray();                         
             
         })
     }        
@@ -34,21 +34,25 @@ function addItemToFoodTray(item){
     const itemPrice = item.querySelector('.item-price').innerHTML;
     const itemImg = item.querySelector('.image').innerHTML;
     const itemQuantity = 1;
-    var totalPrice = parseInt(itemPrice) * itemQuantity;
     const itemsInFoodTray = foodTray.querySelectorAll('item');
-    console.log(itemsInFoodTray)
 
     
 
-    totalPrice = parseInt(itemPrice) * itemQuantity;
+    if (itemName in tray){
+        tray[itemName][1] += 1;
+    }
+    else{
+        tray[itemName] = [itemImg, itemQuantity, itemPrice];
+    }
 
-    tray[itemName] = [itemImg, itemQuantity, itemPrice];
+
+   
 }
 
 function displayItemsInTray(){
-    
+    foodTray.innerHTML = ""
     for (var name in tray){
-        totalPrice = tray[name][1] * tray[name][2];
+        var totalPrice = parseInt(tray[name][1]) * parseInt(tray[name][2]);
         const orderDetails =  
        `<div class="buttons">\
            <span class="delete-btn"><img src="../static/img/delete-icn.svg" alt=""></span>\                      
@@ -60,7 +64,7 @@ function displayItemsInTray(){
             <span class="item-name">${name}</span>\
             </div>\
         <div class="quantity">\        
-            <input type="text" class="qt" value="${tray[name][2]}">\                              
+            <input type="text" class="qt" value="${tray[name][1]}">\                              
         </div>\
         <div class="total-price"><span>Kshs</span> <span>${totalPrice}</span></div>`;
 
