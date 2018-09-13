@@ -1,11 +1,14 @@
 
 const foodTray = document.querySelector('.food-tray');
-const addButtons = document.querySelectorAll('button_1');
+const addButtons = document.querySelectorAll('.button_1');
+
+
 
 function addButtonClickListener(){
     for (const addButton of addButtons){
         addButton.addEventListener('click', () =>{
-            
+            boxItem = addButton.parentElement.parentElement;
+            addItemToFoodTray(boxItem);                         
             
         })
     }        
