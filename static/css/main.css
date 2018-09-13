@@ -31,6 +31,7 @@ ul{
 
 .button_1:hover{
     opacity: 1;
+    cursor: pointer;
 }
     
 /* Header */
