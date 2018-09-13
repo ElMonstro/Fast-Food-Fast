@@ -1,7 +1,11 @@
+'use strict';
 
 const foodTray = document.querySelector('.food-tray');
 const addButtons = document.querySelectorAll('.button_1');
 
+document.addEventListener('DomContentLoaded', () =>{
+    addButtonClickListener();
+})
 
 
 function addButtonClickListener(){
