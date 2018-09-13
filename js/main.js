@@ -2,7 +2,8 @@
 
 const foodTray = document.querySelector('.food-tray');
 const addButtons = document.querySelectorAll('.button_1');
-const removeButtons = document.querySelectorAll('.delete-btn');
+const removeButtons = ('.delete-btn');
+console.log(removeButtons);
 var tray = {};
 
 Object.prototype.isEmpty = function() {
@@ -26,18 +27,9 @@ function addButtonClickListener(){
             displayItemsInTray();                      
             
         })
-    if (!tray.isEmpty()){
-    for (const removeButton in removeButtons){
-        const itemName = removeButton.parentElement.parentElement.querySelector('.item-name').innerHTML
-        removeButton.addEventListener('click', ()=>{
-            removeItemFromTray(itemName);
-            displayItemsInTray();
-        })                
+   
     } 
-}   
-    }        
-}
-
+}  
 
 
 function addItemToFoodTray(item){
@@ -57,10 +49,13 @@ function addItemToFoodTray(item){
     }
 
 function removeItemFromTray(name){
+    console.log('name')
     tray.Remove(name);
 }
 
-
+`<div class="buttons">\
+           <span class="delete-btn"><img src="../static/img/delete-icn.svg" alt=""></span>\                      
+       </div>`
    
 }
 
@@ -69,10 +64,7 @@ function displayItemsInTray(){
     for (var name in tray){
         var totalPrice = parseInt(tray[name][1]) * parseInt(tray[name][2]);
         const orderDetails =  
-       `<div class="buttons">\
-           <span class="delete-btn"><img src="../static/img/delete-icn.svg" alt=""></span>\                      
-       </div>\
-       <div class="cart-image">\
+       `<div class="cart-image">\
         ${tray[name][0]}                        
         </div>\
         <div class="description">\
@@ -84,6 +76,12 @@ function displayItemsInTray(){
         <div class="total-price"><span>Kshs</span> <span>${totalPrice}</span></div>`;
 
         const elementToBeAdded = document.createElement('DIV');
+        var button = document.createElement('BUTTON')
+        button.className = 'delete-button';
+        button.innerHTML = '<img src="../static/img/delete-icn.svg" alt=""></img>'
+        button.addEventListener('click', ()=>{
+            removeItemFromTray(name);
+        })
         elementToBeAdded.className = 'item';
         elementToBeAdded.innerHTML = orderDetails;
         foodTray.appendChild(elementToBeAdded);
