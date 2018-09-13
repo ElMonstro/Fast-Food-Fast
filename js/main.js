@@ -2,6 +2,7 @@
 
 const foodTray = document.querySelector('.food-tray');
 const addButtons = document.querySelectorAll('.button_1');
+const removeButtons = document.querySelectorAll('.delete-btn');
 var tray = {};
 
 Object.prototype.isEmpty = function() {
@@ -18,16 +19,26 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 
 function addButtonClickListener(){
-    for (const addButton of addButtons){
-        console.log(addButton)
+    for (const addButton of addButtons){        
         addButton.addEventListener('click', () =>{
             const boxItem = addButton.parentElement.parentElement;
             addItemToFoodTray(boxItem);
-            displayItemsInTray();                         
+            displayItemsInTray();                      
             
         })
+    if (!tray.isEmpty()){
+    for (const removeButton in removeButtons){
+        const itemName = removeButton.parentElement.parentElement.querySelector('.item-name').innerHTML
+        removeButton.addEventListener('click', ()=>{
+            removeItemFromTray(itemName);
+            displayItemsInTray();
+        })                
+    } 
+}   
     }        
 }
+
+
 
 function addItemToFoodTray(item){
     const itemName = item.querySelector('.name').innerHTML;
@@ -44,6 +55,10 @@ function addItemToFoodTray(item){
     else{
         tray[itemName] = [itemImg, itemQuantity, itemPrice];
     }
+
+function removeItemFromTray(name){
+    tray.Remove(name);
+}
 
 
    
