@@ -216,6 +216,7 @@ form{
     width: 18px;
     height: 17px;
     background: no-repeat center;
+    padding: 0 0 2px 2px; 
 }
 
 .cart-image{
