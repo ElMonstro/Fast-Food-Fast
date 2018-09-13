@@ -31,6 +31,7 @@ ul{
 
 .button_1:hover{
     opacity: 1;
+    cursor: pointer;
 }
     
 /* Header */
@@ -83,10 +84,17 @@ header a:hover{
     font-weight: bolder;
 }
 
+/* section#items */
+#items .container{
+    width: 90%; 
+}
+
+
 /* boxes */
 #boxes{
-    margin-top: 20px;
+    margin-top: 25px;
     float: left;
+    width: 65%;
 }
 
 #boxes .box{
@@ -112,7 +120,7 @@ header a:hover{
     font-weight: bold;
 }
 
-/* logoin and register.html */
+/* login and register.html */
 #content{
     margin-top: 150px;
     
@@ -132,6 +140,8 @@ input[type=email], input[type=password]{
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     background: rgb(223, 250, 231);
+    border-radius: 6px;
+    
 
 }
 
@@ -154,7 +164,7 @@ form{
 
 
 .register_btn {
-    background-color: #4CAF50;
+    background-color: rgb(33, 165, 37);
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
@@ -162,11 +172,134 @@ form{
     cursor: pointer;
     width: 30%;
     opacity: 0.9;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
   
 .registerbtn:hover {
     opacity:1;
 }
+
+
+/* food_tray */
+.food-tray{
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    padding-left: 10px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+.item:last-child{
+    display: none;
+}
+
+.item{
+    padding: 0;
+    height: 80px;
+    display: flex;
+    border-bottom: 1px solid rgb(7, 175, 58);
+        
+}
+
+.buttons {
+    position: relative;
+    padding-top: 30px;
+    margin-right: 3%;
+}
+
+.delete-btn{
+    display: inline-block;
+    cursor: pointer;
+    width: 18px;
+    height: 17px;
+    background: no-repeat center;
+    padding: 0 0 2px 2px; 
+}
+
+.cart-image{
+    width: 15%;
+    margin-right: 5%;
+}
+
+.cart-image img{
+    width: 70%;
+    margin-top: 9px;
+}
+
+
+aside{
+    width: 35%;
+    float: right;
+}
+
+#sidebar h3{
+    margin-bottom: 0;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.item .description{
+    padding-top: 20px;
+    margin-right: 5%;
+    width: 15%;
+    font-weight: 500;
+}
+
+
+.quantity{
+    margin-top: 20px;
+    margin-right: 5%;
+    float: left;
+}
+
+.quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 20px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+
+  .quantity button{
+      width: 25px;
+      height: 25px;
+      background-color: #e1e8ee;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+  }
+
+  .minus-btn img{
+      margin-bottom: 5px;
+
+  }
+
+
+  .plus-btn img{
+      margin-top: 2px;
+  }
+
+button:focus,
+input:focus {
+  outline:0;
+}
+
+.total-price {
+    width: 15%;
+    padding-top: 20px;
+    text-align: center;
+    font-weight: 300;
+}
+
+
+
 
 
 footer{
