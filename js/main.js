@@ -29,15 +29,7 @@ function addButtonClickListener(){
             displayItemsInTray();                      
             
         })
-    if (!tray.isEmpty()){
-    for (const removeButton in removeButtons){
-        const itemName = removeButton.parentElement.parentElement.querySelector('.item-name').innerHTML
-        removeButton.addEventListener('click', ()=>{
-            removeItemFromTray(itemName);
-            displayItemsInTray();
-        })                
-    } 
-}   
+  
     }        
 }
 
@@ -61,7 +53,6 @@ function addItemToFoodTray(item){
 }
 
 function removeItemFromTray(name){
-    console.log(name);
     delete tray[name];
     displayItemsInTray();
 }
