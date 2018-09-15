@@ -29,7 +29,7 @@ ul{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.button_1:hover{
+.button_1:hover,{
     opacity: 1;
     cursor: pointer;
 }
@@ -194,8 +194,7 @@ form{
     
 }
 
-
-.item:last-child, .invincible{
+.invincible{
     display: none;
 }
 
@@ -221,6 +220,20 @@ form{
     background: no-repeat center;
     padding: 0 0 2px 2px; 
 }
+
+#checkout-btn{
+    height: 32px;
+    background: rgb(7, 175, 58);
+    border: 2px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+    align-self: auto;
+    opacity: 0.9;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: right;
+}
+
 
 .cart-image{
     width: 15%;

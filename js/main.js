@@ -8,27 +8,21 @@ var isCheckoutBtn = false;
 var tray = {};
 
 // Fuction to check if tray is empty
-Object.prototype.isEmpty = function() {
-    for(var key in this) {
-        if(this.hasOwnProperty(key))
-            return false;
-    }
-    return true;
+function isEmpty(dict){
+    return Object.getOwnPropertyNames(dict) == 0;
 }
 
 document.addEventListener('DOMContentLoaded', () =>{    
     addButtonClickListener();
 })
 
+// Display or not display checkout button
 function displayCheckoutBtn(){
     const sidebar = document.querySelector('#sidebar');
-    if (!tray.isEmpty()){
-        sidebar.querySelector('#checkout-btn').className = 'invincible';
-        isCheckoutBtn = false;
-    }else{
-        sidebar.querySelector('#checkout-btn').className = 'button_1';
+    if (isEmpty(tray)){
+        sidebar.querySelector('#checkout-btn').className = 'invincible';        
     }
-    
+    console.log(isEmpty(tray));    
 }
 // Add listeners to add button
 function addButtonClickListener(){
@@ -51,6 +45,7 @@ function addItemToFoodTray(item){
     const itemImg = item.querySelector('.image').innerHTML;
     const itemQuantity = 1;
     const itemsInFoodTray = foodTray.querySelectorAll('item');
+    const checkoutBtn = document.querySelector('#checkout-btn');
     
 
     
@@ -60,11 +55,15 @@ function addItemToFoodTray(item){
     }
     else{
         tray[itemName] = [itemImg, itemQuantity, itemPrice];
-    }   
+    }
+    
+    checkoutBtn.className = '';
+    
 }
 
 function removeItemFromTray(name){
     delete tray[name];
+    displayCheckoutBtn();
     displayItemsInTray();
 }
 
