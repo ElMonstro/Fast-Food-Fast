@@ -194,7 +194,8 @@ form{
     
 }
 
-.item:last-child{
+
+.item:last-child, .invincible{
     display: none;
 }
 

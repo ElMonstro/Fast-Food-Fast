@@ -3,7 +3,7 @@
 // Global constants and variables
 const foodTray = document.querySelector('.food-tray');
 const addButtons = document.querySelectorAll('.button_1');
-const removeButtons = document.querySelectorAll('.delete-btn');
+var isCheckoutBtn = false;
 
 var tray = {};
 
@@ -20,6 +20,16 @@ document.addEventListener('DOMContentLoaded', () =>{
     addButtonClickListener();
 })
 
+function displayCheckoutBtn(){
+    const sidebar = document.querySelector('#sidebar');
+    if (!tray.isEmpty()){
+        sidebar.querySelector('#checkout-btn').className = 'invincible';
+        isCheckoutBtn = false;
+    }else{
+        sidebar.querySelector('#checkout-btn').className = 'button_1';
+    }
+    
+}
 // Add listeners to add button
 function addButtonClickListener(){
     for (const addButton of addButtons){        
@@ -41,6 +51,7 @@ function addItemToFoodTray(item){
     const itemImg = item.querySelector('.image').innerHTML;
     const itemQuantity = 1;
     const itemsInFoodTray = foodTray.querySelectorAll('item');
+    
 
     
 
@@ -57,14 +68,14 @@ function removeItemFromTray(name){
     displayItemsInTray();
 }
 
-`<div class="buttons">\
-           <span class="delete-btn"><img src="../static/img/delete-icn.svg" alt=""></span>\                      
-       </div>`
 
 // Display current items in the tray object 
 function displayItemsInTray(){
-    foodTray.innerHTML = ""
-    for (var name in tray){
+    foodTray.innerHTML = "";
+    if (tray.isEmpty){
+        foodTray.innerHTML="";
+    }
+    for (var name in tray){        
         var totalPrice = parseInt(tray[name][1]) * parseInt(tray[name][2]);
         const orderDetails =  
        `<div class="buttons">\
@@ -80,12 +91,15 @@ function displayItemsInTray(){
             <input type="text" class="qt" value="${tray[name][1]}">\                              
         </div>\
         <div class="total-price"><span>Kshs</span> <span>${totalPrice}</span></div>`;
-
+        
+       
         const elementToBeAdded = document.createElement('DIV');
         elementToBeAdded.className = 'item';
         elementToBeAdded.innerHTML = orderDetails;
         elementToBeAdded.querySelector('.delete-button')        
         foodTray.appendChild(elementToBeAdded);
+
+        
         
     }
 }
