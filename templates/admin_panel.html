@@ -24,31 +24,63 @@
         </nav>
         </div>
     </header>
-        <div class="container">
-        <section id="orders-section">
-            <h3></h3>
-            <div id="orders">
-                
-
-            </div>
-        </section>
-            
+        <div class="container" id="section">            
+                    <div id="orders">
+                        <div>
+                            <h3>Orders</h3>
+                            <div id="labels">
+                                <h5>Order #</h5>
+                                <h5>Customer</h5>
+                                <h5>Items</h5>
+                                <h5>Quantity</h5>
+                                <h5>Total Amount</h5>
+                            </div>
+                        </div>                              
         
-          <aside id="sidebar">           
-                <div id="accepted-orders">          
+                            <!-- To be filled dynamically -->
+                
+                    </div>  
+                    <div id="accepted-orders">
+                            <div>
+                                    <h3>Accepted Orders</h3>
+                                    <div id="labels">
+                                        <h5>Order #</h5>
+                                        <h5>Customer</h5>
+                                        <h5>Items</h5>
+                                        <h5>Quantity</h5>
+                                        <h5>Total Amount</h5>
+                                        <h5 id="stts">Status</h5>
+                                    </div>
+                                    <div class="order">
+                                            <span>1</span>
+                                            <h5>Moracha</h5>
+                                            <div class="order-list">
+                                                <ul>
+                                                    <li>chips</li>
+                                                    <li>fries</li>
+                                                </ul>
+                                            </div>
+                                            <div class="qty">
+                                                <ul>
+                                                    <li>4</li>
+                                                    <li>6</li>
+                                                </ul>
+                                            </div>
+                                            <span><span>Kshs</span>500</span>
+                                            <div class="cmplt-order">
+                                                <button>Complete</button>
+                                            </div>
+                                        </div>
+                                        
+                            </div>
+                                      
 
-                    <!-- To be filled dynamically -->
-
-                    
-                </div>
-                <button class="invincible" id="checkout-btn">Checkout</button>         
-            
-         </aside>
-        </div>
-    
+                            
+                    </div>
+    </div>    
 </body>
-<script src="../js/main.js"></script>
+<script src="../js/admin.js"></script>
 <footer>
     <h3>Fast Food Fast &copy; 2018</h3>
-</footer>   
+</footer>
 </html>
