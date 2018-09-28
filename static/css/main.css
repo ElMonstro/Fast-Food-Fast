@@ -53,7 +53,7 @@ header a{
 }
 
 header li{
-    float: right;
+    /*float: right;*/
     display: inline;
     padding: 0 15px 0 15px;
 }
@@ -309,7 +309,8 @@ input:focus {
 #section{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1em; 
+    grid-column-gap: 1em;
+    grid-auto-rows: minmax(560px, auto); 
 }
 
 #orders{

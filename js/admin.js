@@ -3,19 +3,29 @@ var newOrders =
 {jay: [1, ['coke', 1,],['fries', 2,]],
 moe:[2, ['sausage', 4],['samosa',3]],
 emm: [3, ['burger', 3],['coke', 5],['sausage', 2]],
-fiddy: [4, ['coke', 1],['fries', 1]]};
+fiddy: [4, ['coke', 1],['fries', 1]],
+dmx: [1, ['coke', 1,],['fries', 2,]],
+hov:[2, ['sausage', 4],['samosa',3]],
+pac: [3, ['burger', 3],['coke', 5],['sausage', 2]],
+biggy: [4, ['coke', 1],['fries', 1]],
+ti: [3, ['burger', 3],['coke', 5],['sausage', 2]],
+joc: [4, ['coke', 1],['fries', 1]],
+wayne: [1, ['coke', 1,],['fries', 2,]],
+jon:[2, ['sausage', 4],['samosa',3]],
+kaka: [3, ['burger', 3],['coke', 5],['sausage', 2]],
+kanye: [4, ['coke', 1],['fries', 1]]
+};
 
 var acceptedOrders = 
 {
     
 };
 
-const orderDiv = document.createElement('DIV');
-orderDiv.className = 'order'
+const ordersDiv = document.querySelector('#o-list');
+const acceptedOrdersDiv = document.querySelector('#ao-list');
 
 // Displays Orders by looping through newOrders object
 function displayOrders(){
-    const ordersDiv = document.querySelector('#o-list')
     ordersDiv.innerHTML = '';
      for (var name in newOrders){
          var orderList = newOrders[name];
@@ -63,7 +73,6 @@ function displayOrders(){
 // Displays Orders by looping through acceptedOrders object
 
 function displayAcceptedOrders(){
-    const acceptedOrdersDiv = document.querySelector('#ao-list');
     acceptedOrdersDiv.innerHTML = '';
     
     for (name in acceptedOrders){
@@ -144,5 +153,19 @@ function orderButtons(event){
         displayOrders();
     }
 
+}
+
+
+// Invoked when complete order button is cliked
+function completeOrder(event){
+    event.target.style.backgroundColor = 'rgb(7, 175, 58)';
+    event.target.innerText = 'Completed';
+    var name = event.target.parentElement.parentElement.children[1].innerText;
+    var lastIndex = acceptedOrders[name].length -1;
+    acceptedOrders[name][lastIndex] = true;
+    event.target.disabled = true;
+    console.log(2);
+
+    
 }
 
