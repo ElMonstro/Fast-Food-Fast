@@ -5,8 +5,18 @@ moe:[2, ['sausage', 4],['samosa',3]],
 emm: [3, ['burger', 3],['coke', 5],['sausage', 2]],
 fiddy: [4, ['coke', 1],['fries', 1]]};
 
+var acceptedOrders = 
+{
+    
+};
+
+const orderDiv = document.createElement('DIV');
+orderDiv.className = 'order'
+
+// Displays Orders by looping through newOrders object
 function displayOrders(){
-    const ordersDiv = document.querySelector('#orders')
+    const ordersDiv = document.querySelector('#o-list')
+    ordersDiv.innerHTML = '';
      for (var name in newOrders){
          var orderList = newOrders[name];
          var orderNo = orderList[0];
@@ -16,7 +26,7 @@ function displayOrders(){
          const qtyList = document.createElement('UL');
 
          orderDiv.innerHTML=  `<span>${orderNo}</span>
-         <h5>${name}</h5>
+         <span>${name}</span>
          <div class="order-list">
              
          </div>
@@ -25,13 +35,15 @@ function displayOrders(){
          </div>
          <span><span>Kshs </span>500</span>
          <div class="buttons">
-                 <span class="accept"><img src="../static/img/tick.jpg" alt="OK"></span>
-                 <span class="reject"><img src="../static/img/trash.png" alt="NO"></span>                                        
+                 <span><img class="accept" src="../static/img/tick.jpg" alt="OK"></span>
+                 <span><img class="reject" src="../static/img/trash.png" alt="NO"></span>                                        
          </div>`
 
-         const nameListDiv = orderDiv.querySelector('.order-list');
-         const qtyListDiv = orderDiv.querySelector('.qty');                  
 
+         const nameListDiv = orderDiv.querySelector('.order-list');
+         const qtyListDiv = orderDiv.querySelector('.qty'); 
+         const buttonDiv = orderDiv.querySelector('.buttons');
+         buttonDiv.addEventListener('click', orderButtons);
          for (var i = 1; i < orderList.length; i++){
              var order = orderList[i];
              var orderName = order[0];
@@ -48,4 +60,88 @@ function displayOrders(){
      }        
 }
 
+// Displays Orders by looping through acceptedOrders object
+
+function displayAcceptedOrders(){
+    const acceptedOrdersDiv = document.querySelector('#ao-list');
+    acceptedOrdersDiv.innerHTML = '';
+    
+    for (name in acceptedOrders){
+        const orderDiv = document.createElement('DIV');
+        orderDiv.className = 'order';
+
+        var orderList = acceptedOrders[name];
+        var orderNo = orderList[0];
+        var lastIndex = orderList.length - 1;
+        var status = orderList[lastIndex];
+        const statusBtn = document.createElement('BUTTON');
+
+        if (status){
+            statusBtn.innerText = 'Completed';
+            statusBtn.style.backgroundColor = 'rgb(7, 175, 58)';
+            statusBtn.disabled = true;
+        }else{
+            statusBtn.innerText = 'Incomplete';
+            statusBtn.style.backgroundColor = 'rgb(255, 16, 16)';
+        }
+
+        orderDiv.innerHTML = `
+        <span>${orderNo}</span>
+        <span>${name}</span>
+        <div class="order-list">
+            
+        </div>
+        <div class="qty">
+            
+        </div>
+        <span><span>Kshs </span>500</span>
+        <div class="cmplt-order">
+        </div>`
+
+
+    const cmpltBtnDiv = orderDiv.querySelector('.cmplt-order');
+    cmpltBtnDiv.appendChild(statusBtn);
+    const nameListDiv = orderDiv.querySelector('.order-list');
+    const qtyListDiv = orderDiv.querySelector('.qty'); 
+         for (var i = 1; i < orderList.length-1; i++){
+             var order = orderList[i];
+             var orderName = order[0];
+             var qty = order[1];
+             var nameLi = document.createElement('LI');
+             nameLi.innerText = orderName;
+             var qtyLi = document.createElement('LI');
+             qtyLi.innerText = qty;
+             nameListDiv.appendChild(nameLi);
+             qtyListDiv.appendChild(qtyLi);                                      
+         }
+    acceptedOrdersDiv.appendChild(orderDiv);
+   }
+}
+
 displayOrders();
+displayAcceptedOrders();
+
+// Event Functions
+
+// invoked when reject and accept buttons are clicked
+function orderButtons(event){
+    
+    if (event.target.className == 'accept'){
+        var name = event.target.parentElement.parentElement.parentElement.children[1].innerText;
+        var orderList = newOrders[name];
+        orderList.push(false);
+        acceptedOrders[name] = orderList;
+        delete newOrders[name];
+        displayOrders();
+        displayAcceptedOrders();
+        
+                                          
+    }    
+    if (event.target.className == 'reject'){
+        var name = event.target.parentElement.parentElement.parentElement.children[1].innerText;
+        delete newOrders[name];
+        displayOrders();
+    }
+
+}
+
