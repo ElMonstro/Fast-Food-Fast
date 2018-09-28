@@ -7,7 +7,9 @@ fiddy: [4, ['coke', 1],['fries', 1]]};
 
 var acceptedOrders = 
 {
-    moe:[2, false, ['sausage', 4],['samosa',3]],
+    moe:[2, true, ['sausage', 4],['samosa',3]],
+    jay:[2, false, ['sausage', 4],['samosa',3]],
+    hov:[2, false, ['sausage', 4],['samosa',3]],
 };
 
 const orderDiv = document.createElement('DIV');
@@ -24,7 +26,7 @@ function displayOrders(){
          const qtyList = document.createElement('UL');
 
          orderDiv.innerHTML=  `<span>${orderNo}</span>
-         <h5>${name}</h5>
+         <span>${name}</span>
          <div class="order-list">
              
          </div>
@@ -60,9 +62,9 @@ function displayOrders(){
 
 // invoked when reject and accept buttons are clicked
 function orderButtons(event){
-    
+
     if (event.target.className == 'accept'){
-        var orderList =                                 
+                                  
     }
     
     if (event.target.className == 'reject'){
@@ -74,27 +76,28 @@ function orderButtons(event){
 function displayAcceptedOrders(){
     const acceptedOrdersDiv = document.querySelector('#ao-list');
     //acceptedOrders.innerHTML = '';
-    const orderDiv = document.createElement('DIV');
-    orderDiv.className = 'order';
-
+    
     for (name in acceptedOrders){
+        const orderDiv = document.createElement('DIV');
+        orderDiv.className = 'order';
+
         var orderList = acceptedOrders[name];
         var orderNo = orderList[0];
         var status = orderList[1];
         const statusBtn = document.createElement('BUTTON');
 
         if (status){
-            statusBtn.innerText = Completed;
-            statusBtn.style.color = 'rgb(7, 175, 58)';
+            statusBtn.innerText = 'Completed';
+            statusBtn.style.backgroundColor = 'rgb(7, 175, 58)';
+            statusBtn.disabled = true;
         }else{
-            statusBtn.innerText = Completed;
-            statusBtn.style.color = 'rgb(255, 16, 16)';
+            statusBtn.innerText = 'Uncomplete';
+            statusBtn.style.backgroundColor = 'rgb(255, 16, 16)';
         }
 
-        orderDiv.innerHTML = `                                    
-        <div class="order">
+        orderDiv.innerHTML = `
         <span>${orderNo}</span>
-        <h5>${name}</h5>
+        <span>${name}</span>
         <div class="order-list">
             
         </div>
@@ -103,16 +106,14 @@ function displayAcceptedOrders(){
         </div>
         <span><span>Kshs</span>500</span>
         <div class="cmplt-order">
-
-        </div>                                            
-    </div>`
+        </div>`
 
 
     const cmpltBtnDiv = orderDiv.querySelector('.cmplt-order');
     cmpltBtnDiv.appendChild(statusBtn);
     const nameListDiv = orderDiv.querySelector('.order-list');
     const qtyListDiv = orderDiv.querySelector('.qty'); 
-         for (var i = 1; i < orderList.length; i++){
+         for (var i = 2; i < orderList.length; i++){
              var order = orderList[i];
              var orderName = order[0];
              var qty = order[1];
@@ -123,9 +124,11 @@ function displayAcceptedOrders(){
              nameListDiv.appendChild(nameLi);
              qtyListDiv.appendChild(qtyLi);                                      
          }
-    acceptedOrdersDiv.appendChild(ordersDiv)
+    acceptedOrdersDiv.appendChild(orderDiv);
+    console.log(acceptedOrdersDiv);
    }
 }
 
 displayOrders();
+displayAcceptedOrders();
 
