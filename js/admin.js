@@ -7,16 +7,16 @@ fiddy: [4, ['coke', 1],['fries', 1]]};
 
 var acceptedOrders = 
 {
-    moe:[2,  ['sausage', 4],['samosa',3], true,],
-    jay:[2,  ['sausage', 4],['samosa',3], false,],
-    hov:[2,  ['sausage', 4],['samosa',3], false,],
+    
 };
 
 const orderDiv = document.createElement('DIV');
 orderDiv.className = 'order'
 
+// Displays Orders by looping through newOrders object
 function displayOrders(){
     const ordersDiv = document.querySelector('#o-list')
+    ordersDiv.innerHTML = '';
      for (var name in newOrders){
          var orderList = newOrders[name];
          var orderNo = orderList[0];
@@ -60,24 +60,11 @@ function displayOrders(){
      }        
 }
 
-// invoked when reject and accept buttons are clicked
-function orderButtons(event){
-    
-    if (event.target.className == 'accept'){
-        var name = event.target.parentElement.parentElement.parentElement.children[1].innerText;
-        
-                                          
-    }
-    
-    if (event.target.className == 'reject'){
-
-    }
-
-}
+// Displays Orders by looping through acceptedOrders object
 
 function displayAcceptedOrders(){
     const acceptedOrdersDiv = document.querySelector('#ao-list');
-    //acceptedOrders.innerHTML = '';
+    acceptedOrdersDiv.innerHTML = '';
     
     for (name in acceptedOrders){
         const orderDiv = document.createElement('DIV');
@@ -87,7 +74,6 @@ function displayAcceptedOrders(){
         var orderNo = orderList[0];
         var lastIndex = orderList.length - 1;
         var status = orderList[lastIndex];
-        console.log(status);
         const statusBtn = document.createElement('BUTTON');
 
         if (status){
@@ -108,7 +94,7 @@ function displayAcceptedOrders(){
         <div class="qty">
             
         </div>
-        <span><span>Kshs</span>500</span>
+        <span><span>Kshs </span>500</span>
         <div class="cmplt-order">
         </div>`
 
@@ -129,10 +115,33 @@ function displayAcceptedOrders(){
              qtyListDiv.appendChild(qtyLi);                                      
          }
     acceptedOrdersDiv.appendChild(orderDiv);
-    console.log(acceptedOrdersDiv);
    }
 }
 
 displayOrders();
 displayAcceptedOrders();
+
+// Event Functions
+
+// invoked when reject and accept buttons are clicked
+function orderButtons(event){
+    
+    if (event.target.className == 'accept'){
+        var name = event.target.parentElement.parentElement.parentElement.children[1].innerText;
+        var orderList = newOrders[name];
+        orderList.push(false);
+        acceptedOrders[name] = orderList;
+        delete newOrders[name];
+        displayOrders();
+        displayAcceptedOrders();
+        
+                                          
+    }    
+    if (event.target.className == 'reject'){
+        var name = event.target.parentElement.parentElement.parentElement.children[1].innerText;
+        delete newOrders[name];
+        displayOrders();
+    }
+
+}
 
