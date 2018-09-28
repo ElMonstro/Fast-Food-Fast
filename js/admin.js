@@ -7,9 +7,9 @@ fiddy: [4, ['coke', 1],['fries', 1]]};
 
 var acceptedOrders = 
 {
-    moe:[2, true, ['sausage', 4],['samosa',3]],
-    jay:[2, false, ['sausage', 4],['samosa',3]],
-    hov:[2, false, ['sausage', 4],['samosa',3]],
+    moe:[2,  ['sausage', 4],['samosa',3], true,],
+    jay:[2,  ['sausage', 4],['samosa',3], false,],
+    hov:[2,  ['sausage', 4],['samosa',3], false,],
 };
 
 const orderDiv = document.createElement('DIV');
@@ -62,9 +62,11 @@ function displayOrders(){
 
 // invoked when reject and accept buttons are clicked
 function orderButtons(event){
-
+    
     if (event.target.className == 'accept'){
-                                  
+        var name = event.target.parentElement.parentElement.parentElement.children[1].innerText;
+        
+                                          
     }
     
     if (event.target.className == 'reject'){
@@ -83,7 +85,9 @@ function displayAcceptedOrders(){
 
         var orderList = acceptedOrders[name];
         var orderNo = orderList[0];
-        var status = orderList[1];
+        var lastIndex = orderList.length - 1;
+        var status = orderList[lastIndex];
+        console.log(status);
         const statusBtn = document.createElement('BUTTON');
 
         if (status){
@@ -91,7 +95,7 @@ function displayAcceptedOrders(){
             statusBtn.style.backgroundColor = 'rgb(7, 175, 58)';
             statusBtn.disabled = true;
         }else{
-            statusBtn.innerText = 'Uncomplete';
+            statusBtn.innerText = 'Incomplete';
             statusBtn.style.backgroundColor = 'rgb(255, 16, 16)';
         }
 
@@ -113,7 +117,7 @@ function displayAcceptedOrders(){
     cmpltBtnDiv.appendChild(statusBtn);
     const nameListDiv = orderDiv.querySelector('.order-list');
     const qtyListDiv = orderDiv.querySelector('.qty'); 
-         for (var i = 2; i < orderList.length; i++){
+         for (var i = 1; i < orderList.length-1; i++){
              var order = orderList[i];
              var orderName = order[0];
              var qty = order[1];
