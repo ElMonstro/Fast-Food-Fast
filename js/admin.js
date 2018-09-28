@@ -75,6 +75,7 @@ function displayAcceptedOrders(){
         var lastIndex = orderList.length - 1;
         var status = orderList[lastIndex];
         const statusBtn = document.createElement('BUTTON');
+        statusBtn.addEventListener('click', completeOrder);
 
         if (status){
             statusBtn.innerText = 'Completed';
