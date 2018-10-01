@@ -310,7 +310,7 @@ input:focus {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 1em;
-    grid-auto-rows: minmax(560px, auto); 
+    grid-auto-rows: minmax(644px, auto); 
 }
 
 #orders{
