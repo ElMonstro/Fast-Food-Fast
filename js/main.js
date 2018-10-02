@@ -4,9 +4,10 @@
 const foodTray = document.querySelector('.food-tray');
 const addButtons = document.querySelectorAll('.button_1');
 var isCheckoutBtn = false;
+const boxes = document.querySelector('#boxes'); 
 
 // Image html strings
-var item = 
+var items = 
 {
     Coke:     [50,  '<img src="../static/img/coke.jpg">'],
     Burger:   [50,  '<img src="../static/img/burger.jpg">'],
@@ -25,10 +26,34 @@ function isEmpty(dict){
 }
 
 // Liten for domcontentloaded event
-document.addEventListener('DOMContentLoaded', () =>{    
+/*document.addEventListener('DOMContentLoaded', () =>{    
     addButtonClickListener();
-});
+});*/
 
+
+function displayItems(){
+    for (var item in items){
+        var price =  items[item][0];
+        var imgHtml = items[item][1]; 
+        const boxDiv = document.createElement('div');
+        boxDiv.className = 'box';
+        boxDiv.innerHTML = 
+        `<div class="image">${imgHtml}
+
+</div>
+<div class="description">
+<div> <span class="name">${item}</span><br>
+<span class="price"><span>Kshs</span><span class="item-price">${price}</span><span>/=</span></span></div>
+<span class="button_1"><img src="../static/img/add-icon.png" alt=""></span>
+</div>`;
+
+        boxes.appendChild(boxDiv);
+
+
+    }
+}
+
+displayItems();
 // Display or not display checkout button
 function displayCheckoutBtn(){
     const sidebar = document.querySelector('#sidebar');
