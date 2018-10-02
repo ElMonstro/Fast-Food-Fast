@@ -42,10 +42,17 @@ function displayItems(){
 
 </div>
 <div class="description">
-<div> <span class="name">${item}</span><br>
-<span class="price"><span>Kshs</span><span class="item-price">${price}</span><span>/=</span></span></div>
-<span class="button_1"><img src="../static/img/add-icon.png" alt=""></span>
+  <div> <span class="name">${item}</span><br>
+  <span class="price"><span>Kshs</span><span class="item-price">${price}</span><span>/=</span></span></div>
+  <span class="button_1"><img src="../static/img/add-icon.png" alt=""></span>
 </div>`;
+
+ boxDiv.querySelector('.button_1 img').addEventListener('click',  (e) =>{
+    const boxItem = e.target.parentElement.parentElement.parentElement;
+    addItemToFoodTray(boxItem);
+    displayItemsInTray();
+})
+
 
         boxes.appendChild(boxDiv);
 
@@ -118,7 +125,7 @@ function displayItemsInTray(){
         var totalPrice = parseInt(tray[name][1]) * parseInt(tray[name][2]);
         const orderDetails =  
        `<div class="buttons">\
-            <span class="delete-btn" onclick="removeItemFromTray('${name}');"><img src="../static/img/delete-icn.svg" alt=""></span>\                      
+            <span class="delete-btn" onclick="removeItemFromTray('${name}');"><img src="../static/img/trash.png" alt=""></span>\                      
         </div>\
        <div class="cart-image">\
         ${tray[name][0]}                        
@@ -127,7 +134,7 @@ function displayItemsInTray(){
             <span class="item-name">${name}</span>\
             </div>\
         <div class="quantity">\        
-            <input type="text" class="qt" value="${tray[name][1]}">\                              
+            <span class="qt"> ${tray[name][1]}</span>                              
         </div>\
         <div class="total-price"><span>Kshs</span> <span>${totalPrice}</span></div>`;
         
