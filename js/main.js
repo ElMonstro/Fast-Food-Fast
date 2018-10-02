@@ -5,6 +5,18 @@ const foodTray = document.querySelector('.food-tray');
 const addButtons = document.querySelectorAll('.button_1');
 var isCheckoutBtn = false;
 
+// Image html strings
+var item = 
+{
+    Coke:     [50,  '<img src="../static/img/coke.jpg">'],
+    Burger:   [50,  '<img src="../static/img/burger.jpg">'],
+    Pizza:    [500, '<img src="../static/img/pizza.jpg">'],
+    Fries:    [100, '<img src="../static/img/fries.jpg">'],
+    Hotdog:   [70,  '<img src="../static/img/hotdog.jpg">'],
+    Drumstcks:[120, '<img src="../static/img/drumsticks.jpg">'],
+    Wings:    [120, '<img src="../static/img/wings.jpg">'],
+    Samosa:   [50,  '<img src="../static/img/samosa.jpg">'],
+} 
 var tray = {};
 
 // Fuction to check if tray is empty
@@ -12,20 +24,21 @@ function isEmpty(dict){
     return Object.getOwnPropertyNames(dict) == 0;
 }
 
+// Liten for domcontentloaded event
 document.addEventListener('DOMContentLoaded', () =>{    
     addButtonClickListener();
-})
+});
 
 // Display or not display checkout button
 function displayCheckoutBtn(){
     const sidebar = document.querySelector('#sidebar');
     if (isEmpty(tray)){
         sidebar.querySelector('#checkout-btn').className = 'invincible';        
-    }
-    console.log(isEmpty(tray));    
+    }    
 }
+
 // Add listeners to add button
-function addButtonClickListener(){
+/* function addButtonClickListener(){
     for (const addButton of addButtons){        
         addButton.addEventListener('click', () =>{
             const boxItem = addButton.parentElement.parentElement;
@@ -35,7 +48,7 @@ function addButtonClickListener(){
         })
   
     }        
-}
+} */
 
 
 // Add Items to tray object
@@ -61,6 +74,8 @@ function addItemToFoodTray(item){
     
 }
 
+
+// Remove function from tray
 function removeItemFromTray(name){
     delete tray[name];
     displayCheckoutBtn();
