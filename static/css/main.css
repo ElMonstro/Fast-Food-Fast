@@ -75,6 +75,7 @@ header nav{
 header .highlight, header .current a{
     color: #ffffff;
     background-color: rgb(7, 175, 58);
+    border-radius: 5px;
     
 }
 
@@ -82,6 +83,7 @@ header a:hover{
     color: #ffffff;
     background-color: rgb(7, 175, 58);
     font-weight: bolder;
+    border-radius: 5px;
 }
 
 /* section#items */
@@ -338,11 +340,7 @@ input:focus {
     
 }
 
-.order_list{
-    text-decoration: none;
 
-    
-}
 
 h5{
     margin: 0;
@@ -412,6 +410,20 @@ h5{
     opacity: 0.9;
     cursor: pointer;
     
+}
+
+#add-fds{
+    border: 2px solid rgb(7, 175, 58);
+    padding: 4px; 
+    border-radius: 5px;
+    cursor: pointer;          
+}
+
+#add-fds:hover{
+    color: #ffffff;
+    background-color: rgb(7, 175, 58);
+    font-weight: bolder;
+    border-radius: 5px;
 }
 
 
