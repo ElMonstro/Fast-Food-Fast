@@ -125,7 +125,7 @@ header a:hover{
 
 
 
-input[type=email], input[type=password]{
+#content input[type=email], #content input[type=password]{
     width: 30%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -134,11 +134,8 @@ input[type=email], input[type=password]{
     border-left: none;
     border-color: rgb(7, 175, 58);
     box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     background: rgb(223, 250, 231);
-    border-radius: 6px;
-    
+    border-radius: 6px;   
 
 }
 
@@ -404,19 +401,40 @@ h5{
 /* Admin Modal*/
 
 .admin-modal{
-    display: none;
+    /*display: none;*/
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     height: 100%;
+    width: 100%;
     overflow: auto;
     background-color: rgb(0,0,0,0.5);
 
      
 }
 
+.cont{
+    margin: 20% auto;
+    background-color: #ffffff;
+    width: 70%;
+    height: 50%;
+    padding: 10p 10px 50px;
 
+}
+
+.cont form{
+    
+    grid-row-gap: 1em;
+}
+
+.close-btn{
+    float: right;
+}
+
+.itemSubmit{
+     width: 70px;
+}
 
 footer{
     padding:  20px;
