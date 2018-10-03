@@ -11,7 +11,7 @@ var items =
 {
     Coke:     [50,  '<img src="../static/img/coke.png">'],
     Burger:   [50,  '<img src="../static/img/burger.png">'],
-    //Pizza:    [500, '<img src="../static/img/pizza.jpg">'],
+    'Mountain Dew':    [500, '<img src="../static/img/mountaindew.png">'],
     Fries:    [100, '<img src="../static/img/fries.png">'],
     Hotdog:   [70,  '<img src="../static/img/hotdog.png">'],
     Drumsticks:[120, '<img src="../static/img/drumsticks.png">'],
@@ -124,25 +124,24 @@ function displayItemsInTray(){
     for (var name in tray){        
         var totalPrice = parseInt(tray[name][1]) * parseInt(tray[name][2]);
         const orderDetails =  
-       `<div class="buttons">\
+       `<div class="button">
             <span class="delete-btn" onclick="removeItemFromTray('${name}');"><img src="../static/img/trash.png" alt=""></span>\                      
-        </div>\
-       <div class="cart-image">\
+        </div>
+       <div class="cart-image">
         ${tray[name][0]}                        
-        </div>\
-        <div class="description">\
-            <span class="item-name">${name}</span>\
-            </div>\
-        <div class="quantity">\        
+        </div>
+        <div class="description">
+            <span class="item-name">${name}</span>
+        </div>
+        <div class="quantity">        
             <span class="qt"> ${tray[name][1]}</span>                              
-        </div>\
+        </div>
         <div class="total-price"><span>Kshs</span> <span>${totalPrice}</span></div>`;
         
        
         const elementToBeAdded = document.createElement('DIV');
         elementToBeAdded.className = 'item';
-        elementToBeAdded.innerHTML = orderDetails;
-        elementToBeAdded.querySelector('.delete-button')        
+        elementToBeAdded.innerHTML = orderDetails;        
         foodTray.appendChild(elementToBeAdded);
 
         

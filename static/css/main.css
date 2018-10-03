@@ -17,13 +17,7 @@ ul{
     padding: 0;
 }
 
-.button_1{
-    height: 40px;
-    padding-left: 20px;
-    padding-bottom: 10px;
-    color: #ffffff;
-    justify-self: end;
-}
+
 
 .button_1 img{
     cursor: pointer;
@@ -88,7 +82,7 @@ header a:hover{
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 1em;
-    padding-right: 20px; 
+    padding-right: 30px; 
 } 
 
 
@@ -182,15 +176,14 @@ form{
 
 /* food_tray */
 .food-tray{
-    width: 100%;
     height: auto;
     margin-top: 0;
     padding-left: 10px;
     background: #ffffff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display: flex;
-    flex-direction: column;
+    display: grid;
     border-radius: 5px;
+    margin-bottom: 10px;
 
     
 }
@@ -202,19 +195,21 @@ form{
 .item{
     padding: 0;
     height: 80px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     border-bottom: 1px solid rgb(7, 175, 58);
         
 }
 
-.buttons {
-    position: relative;
-    padding-top: 30px;
-    margin-right: 3%;
+.button {
+    justify-self: start;
+    padding-top: 25%;
 }
 
 .delete-btn img{
-    width: 25px;    
+    width: 30px;
+    float: left;
+    cursor: pointer;        
 }
 
 #checkout-btn{
@@ -232,13 +227,11 @@ form{
 
 
 .cart-image{
-    width: 15%;
     margin-right: 5%;
 }
 
 .cart-image img{
-    width: 70%;
-    margin-top: 9px;
+    width: 80%;
 }
 
 
@@ -263,7 +256,7 @@ aside{
 
 .box .description{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
 }
 
 .quantity{
