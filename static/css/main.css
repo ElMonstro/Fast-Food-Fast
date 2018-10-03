@@ -17,20 +17,9 @@ ul{
     padding: 0;
 }
 
-.button_1{
-    height: 32px;
-    background: rgb(7, 175, 58);
-    border: 2px;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: #ffffff;
-    align-self: auto;
-    opacity: 0.9;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
-.button_1:hover,{
-    opacity: 1;
+
+.button_1 img{
     cursor: pointer;
 }
     
@@ -91,32 +80,36 @@ header a:hover{
     width: 90%; 
 }
 
+#items .container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 1em;
+    padding-right: 30px; 
+} 
+
 
 /* boxes */
 #boxes{
     margin-top: 25px;
-    float: left;
-    width: 65%;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 #boxes .box{
     float: left;
-    width: 20%;
     padding: 10px;
     margin: 5px;    
     text-align: start;
+    border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #boxes .box img{
-    width: 70%;
+    width: 90%;
 }
 
 
-
-#boxes .box button{
-    float: right; 
-}
 
 .name{
     font-weight: bold;
@@ -128,7 +121,7 @@ header a:hover{
     
 }
 
-* {box-sizing: border-box}
+
 
 input[type=email], input[type=password]{
     width: 30%;
@@ -165,6 +158,7 @@ form{
 
 
 
+
 .register_btn {
     background-color: rgb(33, 165, 37);
     color: white;
@@ -184,14 +178,14 @@ form{
 
 /* food_tray */
 .food-tray{
-    width: 100%;
     height: auto;
     margin-top: 0;
     padding-left: 10px;
     background: #ffffff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    border-radius: 5px;
+    margin-bottom: 10px;
 
     
 }
@@ -203,24 +197,21 @@ form{
 .item{
     padding: 0;
     height: 80px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     border-bottom: 1px solid rgb(7, 175, 58);
         
 }
 
-.buttons {
-    position: relative;
-    padding-top: 30px;
-    margin-right: 3%;
+.button {
+    justify-self: start;
+    padding-top: 25%;
 }
 
-.delete-btn{
-    display: inline-block;
-    cursor: pointer;
-    width: 18px;
-    height: 17px;
-    background: no-repeat center;
-    padding: 0 0 2px 2px; 
+.delete-btn img{
+    width: 30px;
+    float: left;
+    cursor: pointer;        
 }
 
 #checkout-btn{
@@ -238,13 +229,11 @@ form{
 
 
 .cart-image{
-    width: 15%;
     margin-right: 5%;
 }
 
 .cart-image img{
-    width: 70%;
-    margin-top: 9px;
+    width: 80%;
 }
 
 
@@ -264,35 +253,19 @@ aside{
     margin-right: 5%;
     width: 15%;
     font-weight: 500;
+    
 }
 
+.box .description{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
 
 .quantity{
     margin-top: 20px;
     margin-right: 5%;
     float: left;
 }
-
-.quantity input {
-    -webkit-appearance: none;
-    border: none;
-    text-align: center;
-    width: 20px;
-    font-size: 16px;
-    color: #43484D;
-    font-weight: 300;
-  }
-
-
-  .minus-btn img{
-      margin-bottom: 5px;
-
-  }
-
-
-  .plus-btn img{
-      margin-top: 2px;
-  }
 
 button:focus,
 input:focus {
