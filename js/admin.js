@@ -156,16 +156,19 @@ function orderButtons(event){
 }
 
 
-// Invoked when complete order button is cliked
+// Invoked when complete order button is clicked
 function completeOrder(event){
     event.target.style.backgroundColor = 'rgb(7, 175, 58)';
     event.target.innerText = 'Completed';
     var name = event.target.parentElement.parentElement.children[1].innerText;
     var lastIndex = acceptedOrders[name].length -1;
     acceptedOrders[name][lastIndex] = true;
-    event.target.disabled = true;
-    console.log(2);
+    event.target.disabled = true;   
+}
 
-    
+
+// Add item to homepage
+function addItem (){
+
 }
 
