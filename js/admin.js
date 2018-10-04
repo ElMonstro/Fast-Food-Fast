@@ -189,11 +189,16 @@ function addItem (e){
     if (e.target.id == 'add-fds'){
         adminModal.style.display = 'block';        
     }else{
+        e.preventDefault();
         var imgName = imgNameInput.value;
         var itemName = itemNameInput.value;
         var price = priceInput.value
-        var imgHtml = `<img src="../static/img/${imgName}">`;
-        items[itemName] = [price, imgHtml];    
+        if(imgName != '' & itemName != '' & price != ''){
+            var imgHtml = `<img src="../static/img/${imgName}">`;
+            // send item details to backend
+
+        }
+            
     }
 
 }
