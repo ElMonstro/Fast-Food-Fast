@@ -1,4 +1,7 @@
 'use strict';
+
+
+
 var newOrders = 
 {jay: [1, ['coke', 1,],['fries', 2,]],
 moe:[2, ['sausage', 4],['samosa',3]],
@@ -20,9 +23,23 @@ var acceptedOrders =
 {
     
 };
-
+// Global constants and vaiables
 const ordersDiv = document.querySelector('#o-list');
 const acceptedOrdersDiv = document.querySelector('#ao-list');
+const addItemBtn = document.querySelector('#addItem');
+const addFoodbtn = document.querySelector('#add-fds');
+const adminModal = document.querySelector('.admin-modal');
+const closeButton = document.querySelector('.close-btn');
+const itemNameInput = document.querySelector('#item-name');
+const imgNameInput = document.querySelector('#img');
+const priceInput = document.querySelector('#itm-price');
+// Liten for domcontentloaded event
+document.addEventListener('DOMContentLoaded', () =>{ 
+    addItemBtn.addEventListener('click', addItem);
+    addFoodbtn.addEventListener('click', addItem);
+    adminModal.addEventListener('click', closeModal);
+    closeButton.addEventListener('click', closeModal);
+});
 
 // Displays Orders by looping through newOrders object
 function displayOrders(){
@@ -156,16 +173,41 @@ function orderButtons(event){
 }
 
 
-// Invoked when complete order button is cliked
+// Invoked when complete order button is clicked
 function completeOrder(event){
     event.target.style.backgroundColor = 'rgb(7, 175, 58)';
     event.target.innerText = 'Completed';
     var name = event.target.parentElement.parentElement.children[1].innerText;
     var lastIndex = acceptedOrders[name].length -1;
     acceptedOrders[name][lastIndex] = true;
-    event.target.disabled = true;
-    console.log(2);
+    event.target.disabled = true;   
+}
 
-    
+
+// Add item to homepage
+function addItem (e){
+    if (e.target.id == 'add-fds'){
+        adminModal.style.display = 'block';        
+    }else{
+        e.preventDefault();
+        var imgName = imgNameInput.value;
+        var itemName = itemNameInput.value;
+        var price = priceInput.value
+        if(imgName != '' & itemName != '' & price != ''){
+            var imgHtml = `<img src="../static/img/${imgName}">`;
+            // send item details to backend
+
+        }
+            
+    }
+
+}
+
+
+// Close modal
+function closeModal(e){
+    if (e.target.className == 'admin-modal' || e.target.className == 'close-btn'){
+    adminModal.style.display = 'none';
+    }
 }
 

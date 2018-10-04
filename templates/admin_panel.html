@@ -17,9 +17,10 @@
             </div>
         <nav>
             <ul>
-                <li><a href="admin_panel.html">Admin</a></li>             
-                <li><a href="register.html">Add Foods</a></li>                
-                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li class="current"><a href="admin_panel.html">Admin</a></li>             
+                <li ><span id="add-fds">ADD FOODS</span></li>                
+                
             </ul>
         </nav>
         </div>
@@ -58,13 +59,36 @@
                                     
                                     </div>
                                         
-                            </div>
-                                      
-
+                            </div>                                  
                             
                     </div>
+    </div>
+
+    <div class="admin-modal">
+        <div class="cont">
+            <div class="modal-header"><span class="close-btn">X</span></div>
+            <form>
+                <div class="container">
+                    <h1>Add Item</h1>         
+                    
+        
+                    <label for="name">Item Name:</label><br>
+                    <input type="text" placeholder="Item Name" name="name" required="true" id="item-name"><br>
+        
+                    <label for="price">Item Price:</label><br>
+                    <input type="text" placeholder="100" name="price" required="true" id="itm-price"><br>
+                    <label for="img-name">Image Name:</label><br>
+                    <input type="text" placeholder="image_name.png" name="img-name" required="true" id="img"><br>                  
+                    
+                    <button class="register_btn" id="addItem">Add</button>
+                </div>  
+                
+            </form>
+            </div>  
+        </div>
     </div>    
 </body>
+<script src="../js/main.js"></script>
 <script src="../js/admin.js"></script>
 <footer>
     <h3>Fast Food Fast &copy; 2018</h3>
