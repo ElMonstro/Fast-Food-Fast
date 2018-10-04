@@ -1,4 +1,7 @@
 'use strict';
+
+
+
 var newOrders = 
 {jay: [1, ['coke', 1,],['fries', 2,]],
 moe:[2, ['sausage', 4],['samosa',3]],
@@ -20,9 +23,23 @@ var acceptedOrders =
 {
     
 };
-
+// Global constants and vaiables
 const ordersDiv = document.querySelector('#o-list');
 const acceptedOrdersDiv = document.querySelector('#ao-list');
+const addItemBtn = document.querySelector('#addItem');
+const addFoodbtn = document.querySelector('#add-fds');
+const adminModal = document.querySelector('.admin-modal');
+const closeButton = document.querySelector('.close-btn');
+const itemNameInput = document.querySelector('#item-name');
+const imgNameInput = document.querySelector('#img');
+const priceInput = document.querySelector('#itm-price');
+// Liten for domcontentloaded event
+document.addEventListener('DOMContentLoaded', () =>{ 
+    addItemBtn.addEventListener('click', addItem);
+    addFoodbtn.addEventListener('click', addItem);
+    adminModal.addEventListener('click', closeModal);
+    closeButton.addEventListener('click', closeModal);
+});
 
 // Displays Orders by looping through newOrders object
 function displayOrders(){
@@ -168,7 +185,24 @@ function completeOrder(event){
 
 
 // Add item to homepage
-function addItem (){
+function addItem (e){
+    if (e.target.id == 'add-fds'){
+        adminModal.style.display = 'block';        
+    }else{
+        var imgName = imgNameInput.value;
+        var itemName = itemNameInput.value;
+        var price = priceInput.value
+        var imgHtml = `<img src="../static/img/${imgName}">`;
+        items[itemName] = [price, imgHtml];    
+    }
 
+}
+
+
+// Close modal
+function closeModal(e){
+    if (e.target.className == 'admin-modal' || e.target.className == 'close-btn'){
+    adminModal.style.display = 'none';
+    }
 }
 

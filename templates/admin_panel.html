@@ -69,14 +69,16 @@
             <div class="modal-header"><span class="close-btn">X</span></div>
             <form>
                 <div class="container">
-                    <h1>Add Item</h1>          
+                    <h1>Add Item</h1>         
                     
         
                     <label for="name">Item Name:</label><br>
-                    <input type="text" placeholder="Item Name" name="name" required="true"><br>
+                    <input type="text" placeholder="Item Name" name="name" required="true" id="item-name"><br>
         
-                    <label for="">Image Full Name:</label><br>
-                    <input type="text" placeholder="image_name.png" name="password" required="true"><br>                  
+                    <label for="price">Item Price:</label><br>
+                    <input type="text" placeholder="100" name="price" required="true" id="itm-price"><br>
+                    <label for="img-name">Image Name:</label><br>
+                    <input type="text" placeholder="image_name.png" name="img-name" required="true" id="img"><br>                  
                     
                     <button class="register_btn" id="addItem">Add</button>
                 </div>  
@@ -86,6 +88,7 @@
         </div>
     </div>    
 </body>
+<script src="../js/main.js"></script>
 <script src="../js/admin.js"></script>
 <footer>
     <h3>Fast Food Fast &copy; 2018</h3>

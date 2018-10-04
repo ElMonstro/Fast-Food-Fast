@@ -400,7 +400,7 @@ h5{
 /* Admin Modal*/
 
 .admin-modal{
-    /*display: none;*/
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -417,7 +417,8 @@ h5{
     margin: 10% auto;
     background-color: #ffffff;
     width: 40%;
-    height: 40%;
+    height: 40% auto;
+    padding-bottom: 10px;
 
 }
 
