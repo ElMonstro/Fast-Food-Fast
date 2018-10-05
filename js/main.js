@@ -9,14 +9,14 @@ const boxes = document.querySelector('#boxes');
 // Image html strings
 var items = 
 {
-    Coke:     [50,  '<img src="/static/img/coke.png">'],
-    Burger:   [50,  '<img src="/static/img/burger.png">'],
-    'Mountain Dew':    [500, '<img src="/static/img/mountaindew.png">'],
-    Fries:    [100, '<img src="/static/img/fries.png">'],
-    Hotdog:   [70,  '<img src="/static/img/hotdog.png">'],
-    Drumsticks:[120, '<img src="/static/img/drumsticks.png">'],
-    Wings:    [120, '<img src="/static/img/wings.png">'],
-    Taco:   [50,  '<img src="/static/img/taco.png">'],
+    Coke:     [50,  '<img src="static/img/coke.png">'],
+    Burger:   [50,  '<img src="static/img/burger.png">'],
+    'Mountain Dew':    [500, '<img src="static/img/mountaindew.png">'],
+    Fries:    [100, '<img src="static/img/fries.png">'],
+    Hotdog:   [70,  '<img src="static/img/hotdog.png">'],
+    Drumsticks:[120, '<img src="static/img/drumsticks.png">'],
+    Wings:    [120, '<img src="static/img/wings.png">'],
+    Taco:   [50,  '<img src="static/img/taco.png">'],
 } 
 var tray = {};
 
