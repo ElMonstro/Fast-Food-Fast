@@ -14,7 +14,7 @@ var items =
     'Mountain Dew':    [500, '<img src="../static/img/mountaindew.png">'],
     Fries:    [100, '<img src="../static/img/fries.png">'],
     Hotdog:   [70,  '<img src="../static/img/hotdog.png">'],
-    Drumsticks:[120, '<img src="../static/img/drumsticks.png">'],
+    Drumsticks:[120, '<img src="https://github.com/ElMonstro/Fast-Food-Fast/blob/gh-pages/static/img/drumsticks.png?raw=true">'],
     Wings:    [120, '<img src="../static/img/wings.png">'],
     Taco:   [50,  '<img src="../static/img/taco.png">'],
 } 
